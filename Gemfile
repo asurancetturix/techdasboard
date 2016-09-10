@@ -17,6 +17,8 @@ gem 'thin'
 gem 'underscore-rails'
 gem 'legato'
 gem 'google-api-client'
+gem 'twitter'
+gem 'watson-api-client'
 
 group :development do
   gem 'better_errors'

@@ -29,6 +29,24 @@ class HomeController < ApplicationController
     #   :redirect_uri => 'http://www.example.com/oauth2callback'
     # )
 
+    twitter_news
+
   end
+
+  def twitter_news
+
+
+    config = {
+      consumer_key:    'm6UTRNaHUyeXecYoddqXzB74S',
+      consumer_secret: 'GFKfDgFLN4PFcqSeihFAOJfVKSrhzxBPSxKSDSTXrXynGQLrMu',
+    }
+
+    client = Twitter::REST::Client.new(config)
+    
+    @tweets = client.user_timeline("entropeer")
+
+  end
+
+  
 
 end

@@ -10,6 +10,10 @@ $(document).ready(function(){
 
 });
 
+function display_latest_tweet(){
+  
+}
+
 function display_applications(data){
 
   console.log(data.application_instances);
