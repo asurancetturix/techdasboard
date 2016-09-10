@@ -12,7 +12,7 @@ group :development, :test do
   gem 'spring'
 end
 gem 'devise'
-gem 'sendgrid'
+gem 'sendgrid'  
 gem 'thin'
 group :development do
   gem 'better_errors'
