@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Techcrunch1
 ================
 
@@ -48,3 +49,6 @@ Credits
 
 License
 -------
+=======
+# leaf
+>>>>>>> 5366eac19afde34161c3f47fafe8e4254595f97e
