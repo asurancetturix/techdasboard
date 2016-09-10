@@ -1,14 +1,27 @@
+
+
 <ul id="applications"></ul>
 
 <script type="text/html" id="template-applications">
-  <div class="application">
-  Application: {{= host }}
-
+  <li class="application">
+  	<div class="status-icon warn">
+  	{{= host }}
+  		<i class="fa fa-warning"></i>
+  	</div>
+  	<div>Apdex Score<span>0.84 <i class="fa fa-caret-up" aria-hidden="true"></i></span></div>
+  	<div>Response Time<span>466 ms <i class="fa fa-caret-up" aria-hidden="true"></i></span></div>
+  	<div>Active Users<span>122</span></div>
+  	<div>Bounce Rate<span>45.5% <i class="fa fa-caret-up" aria-hidden="true"></i></span></div>
+  	<div>Alerts<span>3</span>  </div>
+  	<div class="alert-messages">
+  		<ul>
+  			<li>This is a test message about your website</li>
+  			<li>There is one negative review on Twitter</li>
+  			<li>This is another test lorem ipsum message about the site</li>
+  		</ul>
+  	</div>
     <div id="new-relic-{{= host }}"></div>
-
-  </div>
-
-  <hr />
+  </li>
 
 </script>
 
