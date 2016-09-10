@@ -16,6 +16,7 @@ gem 'sendgrid'
 gem 'thin'
 gem 'underscore-rails'
 gem 'legato'
+gem 'google-api-client'
 
 group :development do
   gem 'better_errors'
