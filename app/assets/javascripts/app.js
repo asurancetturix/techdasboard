@@ -19,11 +19,15 @@ $(document).ready(function(){
 });
 
 function display_new_relic(data){
-  $(data.application_instances).each(function(i, app){
-    var output_new_relic = _.template(document.getElementById("template-applications").innerHTML);
 
-    $('#applications').append(output_new_relic(app));
+  console.log(data.application_instances);
+
+  $(data.application_instances).each(function(i, app){
+    var output_application = _.template(document.getElementById("template-applications").innerHTML);
+    var output_new_relic = _.template(document.getElementById("template-new-relic").innerHTML);
+
+    $('#applications').append(output_application(app));
+    $('#applications #new-relic-' + app.host).append(output_new_relic(app.application_summary));
 
   });
-  console.log(data.application_instances);
 }

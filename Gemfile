@@ -15,6 +15,7 @@ gem 'devise'
 gem 'sendgrid'  
 gem 'thin'
 gem 'underscore-rails'
+gem 'legato'
 
 group :development do
   gem 'better_errors'

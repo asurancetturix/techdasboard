@@ -1,11 +1,18 @@
-homepage
-
-<ul id="applications">
-
-</ul>
+<ul id="applications"></ul>
 
 <script type="text/html" id="template-applications">
-  <div class="pepe">
-  Pepe {{= host }}
+  <div class="application">
+  Application: {{= host }}
+
+    <div id="new-relic-{{= host }}"></div>
+
   </div>
+
+  <hr />
+
+</script>
+
+<script type="text/html" id="template-new-relic">
+  apdex_score: {{= apdex_score }} <br />
+  response_time: {{= response_time }} <br />
 </script>

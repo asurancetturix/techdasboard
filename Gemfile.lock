@@ -80,6 +80,8 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    legato (0.7.0)
+      multi_json
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -183,6 +185,7 @@ DEPENDENCIES
   hub
   jbuilder (~> 2.0)
   jquery-rails
+  legato
   pg
   rails (= 4.2.2)
   rails_12factor
