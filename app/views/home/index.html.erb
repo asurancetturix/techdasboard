@@ -1,5 +1,3 @@
-
-
 <ul id="applications"></ul>
 
 <script type="text/html" id="template-applications">
@@ -8,19 +6,12 @@
   	{{= host }}
   		<i class="fa fa-warning"></i>
   	</div>
-  	<div>Apdex Score<span class="apdex-score">{{= application_summary.apdex_score }} </span></div>
-  	<div>Response Time<span class="response-time">{{= application_summary.response_time }} ms</span></div>
-  	<div>Day Sessions<span class="day-sessions">{{= daily_users }}</span></div>
-  	<div>Bounce Rate<span class="bounce-rate">{{= bounce_rate }}% </span></div>
+  	<div>Apdex Score<span class="apdex-score">{{= apdex_score }} </span></div>
+  	<div>Response Time<span class="response-time">{{= response_time }} ms</span></div>
+  	<div>Troughput<span class="throughput">{{= throughput }}</span></div>
+  	<div>Error Rate<span class="error-rate">{{= error_rate }}% </span></div>
   	<div id="gauge-{{= host }}" class="gauge" style="width: 200px; height: 90px;"></div>
     <div id="new-relic-{{= host }}"></div>
   </li>
 
 </script>
-
-<p>
-  <div class="g-signin2" data-onsuccess="gaLoadedProperly"></div>
-</p>
-
-<!-- Load the JavaScript API client and Sign-in library. -->
-<script src="https://apis.google.com/js/client:platform.js"></script>
