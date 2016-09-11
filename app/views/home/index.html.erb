@@ -8,11 +8,11 @@
   	{{= host }}
   		<i class="fa fa-warning"></i>
   	</div>
-  	<div>Apdex Score<span class="apdex-score">{{= application_summary.apdex_score }} <i class="fa fa-caret-up" aria-hidden="true"></i></span></div>
-  	<div>Response Time<span class="response-time">{{= application_summary.response_time }} ms <i class="fa fa-caret-up" aria-hidden="true"></i></span></div>
+  	<div>Apdex Score<span class="apdex-score">{{= application_summary.apdex_score }} </span></div>
+  	<div>Response Time<span class="response-time">{{= application_summary.response_time }} ms</span></div>
   	<div>Day Sessions<span class="day-sessions">{{= daily_users }}</span></div>
-  	<div>Bounce Rate<span class="bounce-rate">{{= bounce_rate }}<i class="fa fa-caret-up" aria-hidden="true"></i></span></div>
-  	<div id="gauge-{{= host }}" class="200x160px"></div>
+  	<div>Bounce Rate<span class="bounce-rate">{{= bounce_rate }}% </span></div>
+  	<div id="gauge-{{= host }}" class="gauge" style="width: 200px; height: 90px;"></div>
     <div id="new-relic-{{= host }}"></div>
   </li>
 

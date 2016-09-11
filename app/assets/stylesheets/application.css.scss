@@ -75,6 +75,9 @@ ul {
       }
       &:last-child { display: none; }
     }
+    .gauge {
+      margin-top: -20px;
+    }
     .status-icon {
       text-align: center;
       height: calc(100% + 30px);

@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore
-//= require raphael-2.1.4
+//= require raphael-2.1.4.min
 //= require justgage
+//= require app

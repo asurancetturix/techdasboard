@@ -15,15 +15,14 @@ function display_applications(data){
   var apps_processed = new Array();
 
   $(data.application_instances).each(function(i, app){
-    app.bounce_rate = parseFloat(getRandomArbitrary(0,50)).toFixed(2);
-    app.daily_users = Math.round(getRandomArbitrary(0,15000));
-    app.status = calculate_status(app);
-    app.result = calculate_result(app);
-
-    if(app.application_summary.apdex_score != null){
+    if(app.application_summary != null && app.application_summary.apdex_score != null){
+      app.analytics = calculate_analytics(app);
+      app.bounce_rate = parseFloat(getRandomArbitrary(0,50)).toFixed(2);
+      app.daily_users = Math.round(getRandomArbitrary(0,15000));
+      app.status = calculate_status(app);
+      app.result = calculate_result(app);
       apps_processed.push(app);
     }
-
   });
 
   apps_processed.sort(function(a, b) {
@@ -44,11 +43,16 @@ function display_applications(data){
     $('#applications').append(output_application(app));
 
     var g = new JustGage({
-      id: "gauge" + app.host,
-      value: app.total,
+      id: "gauge-" + app.host,
+      value: app.result,
       min: 0,
       max: 100,
-      title: "Visitors"
+      width: 200,
+      height: 90,
+      titleFontColor: "#ffffff",
+      valueFontColor: "#ffffff",
+      levelColors:["#C9302C","#F39C12","#27AE60"],
+      title: ""
     });
 
   });
@@ -90,16 +94,16 @@ function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-function get_analytics_view_id(site){
+function calculate_analytics(app){
   var view_id = "62035048";
 
-  switch(site){
+  switch(app.host){
     case "USMIWEBS010":
       view_id = "62035048";
     break;
 
     case "IWHCWEB001":
-      view_id = "62035048";
+      view_id = "2013095";
     break;
 
     case "USMIWEBS013":
@@ -107,7 +111,7 @@ function get_analytics_view_id(site){
     break;
 
     case "USPAWEBS005":
-      view_id = "62035048";
+      view_id = "2013095";
     break;
 
   }
