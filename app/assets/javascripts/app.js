@@ -49,21 +49,24 @@ function display_applications(data){
   });
 
   $(apps_processed).each(function(i, app){
-    var output_application = _.template(document.getElementById("template-applications").innerHTML);
-    $('#applications').append(output_application(app));
+    if($('#application-' + app.host).size() == 0){
+      var output_application = _.template(document.getElementById("template-applications").innerHTML);
+      $('#applications').append(output_application(app));
 
-    var g = new JustGage({
-      id: "gauge-" + app.host,
-      value: app.result,
-      min: 0,
-      max: 100,
-      width: 200,
-      height: 90,
-      titleFontColor: "#ffffff",
-      valueFontColor: "#ffffff",
-      levelColors:["#C9302C","#F39C12","#27AE60"],
-      title: ""
-    });
+      var g = new JustGage({
+        id: "gauge-" + app.host,
+        value: app.result,
+        min: 0,
+        max: 100,
+        width: 200,
+        height: 90,
+        titleFontColor: "#ffffff",
+        valueFontColor: "#ffffff",
+        levelColors:["#C9302C","#F39C12","#27AE60"],
+        title: ""
+      });
+    }
+
   });
 
   $('#applications').fadeIn(500);
@@ -73,7 +76,7 @@ function calculate_status(app){
   //class => warn / ok / error
   var status = "a_ok";
 
-  if(app.apdex_score < 0.5 || app.error_rate > 0 || app.throughput == 0){
+  if(app.apdex_score < 0.5 || app.error_rate >= 1 || app.throughput == 0){
     status = "a_error";
   } else if (app.apdex_score < 0.7){
     status = "b_warn";
