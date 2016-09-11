@@ -278,9 +278,3 @@ DEPENDENCIES
   underscore-rails
   watson-api-client
   web-console (~> 2.0)
-
-RUBY VERSION
-   ruby 2.1.1p76
-
-BUNDLED WITH
-   1.13.0

@@ -88,14 +88,14 @@ ul {
         text-align: center;
         padding-top: 5px;
   	  }
-      &.warn { background: #F39C12; }      
-      &.ok { 
+      &.b_warn { background: #F39C12; }      
+      &.c_ok { 
         background: #27AE60 !important; 
         i:before {
           content: "\f058";
         }
       }
-      &.error { 
+      &.a_error { 
         background: #C9302C !important; 
         i:before {
           content: "\f057";

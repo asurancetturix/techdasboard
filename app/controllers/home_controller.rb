@@ -29,7 +29,7 @@ class HomeController < ApplicationController
     #   :redirect_uri => 'http://www.example.com/oauth2callback'
     # )
 
-    twitter_news
+    # twitter_news
 
   end
 

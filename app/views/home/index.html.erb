@@ -4,43 +4,23 @@
 
 <script type="text/html" id="template-applications">
   <li class="application">
-  	<div class="status-icon warn">
+  	<div class="status-icon {{= status }}">
   	{{= host }}
   		<i class="fa fa-warning"></i>
   	</div>
-  	<div>Apdex Score<span>0.84 <i class="fa fa-caret-up" aria-hidden="true"></i></span></div>
-  	<div>Response Time<span>466 ms <i class="fa fa-caret-up" aria-hidden="true"></i></span></div>
-  	<div>Active Users<span>122</span></div>
-  	<div>Bounce Rate<span>45.5% <i class="fa fa-caret-up" aria-hidden="true"></i></span></div>
-  	<div>Alerts<span>3</span>  </div>
-  	<div class="alert-messages">
-  		<ul>
-  			<li>This is a test message about your website</li>
-  			<li>There is one negative review on Twitter</li>
-  			<li>This is another test lorem ipsum message about the site</li>
-  		</ul>
-  	</div>
+  	<div>Apdex Score<span class="apdex-score">{{= application_summary.apdex_score }} <i class="fa fa-caret-up" aria-hidden="true"></i></span></div>
+  	<div>Response Time<span class="response-time">{{= application_summary.response_time }} ms <i class="fa fa-caret-up" aria-hidden="true"></i></span></div>
+  	<div>Day Sessions<span class="day-sessions">{{= daily_users }}</span></div>
+  	<div>Bounce Rate<span class="bounce-rate">{{= bounce_rate }}<i class="fa fa-caret-up" aria-hidden="true"></i></span></div>
+  	<div id="gauge-{{= host }}" class="200x160px"></div>
     <div id="new-relic-{{= host }}"></div>
   </li>
 
 </script>
 
-<script type="text/html" id="template-new-relic">
-  apdex_score: {{= apdex_score }} <br />
-  response_time: {{= response_time }} <br />
-</script>
-
-
-<%= @tweets.inspect %>
-
-
 <p>
-  <!-- The Sign-in button. This will run `queryReports()` on success. -->
   <div class="g-signin2" data-onsuccess="gaLoadedProperly"></div>
 </p>
-
-<!-- The API response will be printed here. -->
-<textarea cols="80" rows="20" id="query-output"></textarea>
 
 <!-- Load the JavaScript API client and Sign-in library. -->
 <script src="https://apis.google.com/js/client:platform.js"></script>

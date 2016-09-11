@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require underscore
+//= require raphael-2.1.4
+//= require justgage
