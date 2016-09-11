@@ -80,9 +80,7 @@ function calculate_status(app){
   } else {
     status = "c_ok";
   }
-
   return status;
-
 }
 
 
